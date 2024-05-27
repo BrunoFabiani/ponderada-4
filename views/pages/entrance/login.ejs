@@ -1,0 +1,80 @@
+<div class="container-fluid flex-grow-1 d-flex">
+  <div class="row flex-grow-1">
+    <div
+      class="col-12 col-sm-6 d-sm-flex d-none justify-content-center align-self-center"
+    >
+      <img src="images/cachorroLogin.png" class="img-fluid" id="dogImage" />
+    </div>
+
+    <div
+      class="col-12 col-sm-6 d-flex justify-content-center align-items-center flex-column"
+    >
+      <img
+        src="images/person.svg"
+        style="width: 60%"
+        class="img-fluid mx-auto d-sm-none mb-3"
+        id="person"
+      />
+
+      <p
+        class="wd-text-danger wd-text-bold me-4 ms-4 d-none d-sm-block"
+        style="font-size: 1.5rem"
+      >
+        Login
+      </p>
+
+      <ajax-form 
+        action="login" 
+        :syncing.sync="syncing" 
+        :cloud-error.sync="cloudError" 
+        :form-rules="formRules" 
+        @submitted="submittedForm()"
+        class="wd-bg-secondary col-sm-8 p-4 rounded-3 ms-4 me-4 d-flex flex-column justify-content-center align-center"
+      >
+      
+
+        <div class="row mb-2">
+          <div class="form-group col-12">
+            <label class="wd-text-bold wd-text-white" for="email" id="email"
+              >E-mail</label
+            >
+            <input
+              placeholder="exemplo@exemplo.com"
+              type="email"
+              class="p-3 p-sm-2 form-control wd-rounded-md"
+              id="email"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="form-group col-12">
+            <label class="wd-text-bold wd-text-white" for="senha" id="senha"
+              >Senha</label
+            >
+            <input
+              placeholder="****"
+              type="password"
+              class="p-3 p-sm-2 form-control wd-rounded-md"
+              id="senha"
+            />
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-12 d-flex">
+            <ajax-button type="submit" :syncing="syncing" class="btn wd-btn-primary p-2 flex-grow-1" id="submit">
+              Logar
+            </ajax-button>
+          </div>
+        </div>
+
+        <div class="row justify-content-center align-center">
+          <a href="/forgot-password" class="text-center wd-text-white"
+            >Esqueci a senha</a
+          >
+        </div>
+      </div>
+      </ajax-form>
+    </div>
+  </div>
+</div>
